@@ -1,0 +1,25 @@
+
+
+.ThePostForm {
+    font-family: 'Dosis', sans-serif;
+    background-color: #79c5e8;
+    width: 50%;
+    margin: auto;
+}
+
+.postForm {
+    padding: 15px;
+}
+
+#newThought {
+
+    width: 300px;
+
+}
+#title {
+    width: 300px;
+}
+
+button {
+    margin: 15px;
+}
