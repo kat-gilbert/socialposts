@@ -1,11 +1,13 @@
 import { Post } from "./Post"
 import { FormEvent, useState } from "react";
+import Modal from 'react-modal';
 
 interface Props {
     onSubmit: (post: Post) => void;
+    onClose: () => void;
 }
 
-export const ThePostForm = ({onSubmit}:Props) => { 
+export const ThePostForm = ({onSubmit, onClose}:Props) => { 
 
 const [ title, setTitle ] = useState("");
 const [ thoughts, setThoughts ] = useState("");
@@ -29,6 +31,7 @@ function handlePostSubmit(e:FormEvent) {
 
     return (
     <div className="ThePostForm" onSubmit={handlePostSubmit}>
+      <p className="close"><i className="material-icons" onClick={()=>onClose}>close</i></p>
 
       <form className="postForm" action="submit">
         <p>

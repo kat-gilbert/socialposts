@@ -6,6 +6,16 @@ import "./SocialPosts.css"
 
 export const SocialPosts = () => {
 
+ let [ openForm, setOpenForm ] = useState(false);
+
+ function openModal() {
+    setOpenForm(true);
+    console.log("hello");
+  }
+  function closeModal() {
+    setOpenForm(false);
+  }
+
  const [post, setPost] = useState<Post[]>([
 
         {title: "post1", thoughts: "mmm"},
@@ -15,6 +25,7 @@ export const SocialPosts = () => {
 
     function handlePostFormSubmit(newPost: Post): void {
         setPost(prev => [ ...post, newPost ]);
+        setOpenForm(false);
       }
 
     function handleDeletePost(index: number) {
@@ -26,10 +37,11 @@ export const SocialPosts = () => {
             <div className="SocialPosts">
             <h1>My Thoughts</h1>
             </div>
+            <button onClick={openModal}>New Thought</button>
 
-            <button>New Thought</button>
-            <ThePostForm onSubmit={handlePostFormSubmit}/>
-
+            {openForm ?? 
+            <ThePostForm  onSubmit={handlePostFormSubmit} onClose={closeModal}/>
+            }
             {post.map((post, i) => <PostInList key={i} post={post} onDelete={() => handleDeletePost(i)}/>)}
             
         </div>

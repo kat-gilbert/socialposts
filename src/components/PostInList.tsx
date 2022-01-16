@@ -1,5 +1,4 @@
 import { Post } from "./Post"
-import { ThePostForm } from "./ThePostForm"
 import "./PostInList.css"
 
 interface PostProp {
@@ -9,14 +8,11 @@ interface PostProp {
 
 export const PostInList = ({post, onDelete}:PostProp) => {
 
-    // let style = {
-    // }
-
     return (
 
         <div className="PostInList" >
-            <p>{post.title}</p>
-            <p>{post.thoughts} <i className="material-icons" onClick={onDelete}>delete</i></p>
+            <p className="title">{post.title}</p>
+            <p className="thoughts">{post.thoughts} <i className="material-icons" onClick={onDelete}>delete</i></p>
 
 
             

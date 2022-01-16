@@ -1,4 +1,4 @@
-
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 .ThePostForm {
     font-family: 'Dosis', sans-serif;
@@ -8,18 +8,22 @@
 }
 
 .postForm {
-    padding: 15px;
+    padding: 10px;
 }
 
 #newThought {
-
     width: 300px;
-
 }
+
 #title {
     width: 300px;
 }
 
 button {
     margin: 15px;
+}
+
+.close {
+    text-align: right;
+    padding: 10px;
 }
