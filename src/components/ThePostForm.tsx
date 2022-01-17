@@ -31,7 +31,7 @@ function handlePostSubmit(e:FormEvent) {
 
     return (
     <div className="ThePostForm" onSubmit={handlePostSubmit}>
-      <p className="close"><i className="material-icons" onClick={()=>onClose}>close</i></p>
+      <p className="close"><i className="material-icons" onClick={onClose}>close</i></p>
 
       <form className="postForm" action="submit">
         <p>
