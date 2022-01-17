@@ -13,10 +13,6 @@ export const PostInList = ({post, onDelete}:PostProp) => {
         <div className="PostInList" >
             <p className="title">{post.title}</p>
             <p className="thoughts">{post.thoughts} <i className="material-icons" onClick={onDelete}>delete</i></p>
-
-
-            
-
         </div>
     )
 }

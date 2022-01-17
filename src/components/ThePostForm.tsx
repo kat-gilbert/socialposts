@@ -21,8 +21,6 @@ function handlePostSubmit(e:FormEvent) {
     thoughts: thoughts,
   };
 
-  // Then trigger the onSubmit callback
-  // 3. call the callback prop from the event handler
   onSubmit(newPost);
 
   setTitle("");
