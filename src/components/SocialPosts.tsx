@@ -47,7 +47,7 @@ const [post, setPost] = useState<Post[]>([
       };
 
     return (
-        <div className="container">
+            <div className="container">
             <div className="SocialPosts">
             <h1>My Thoughts</h1>
             </div>
@@ -56,15 +56,15 @@ const [post, setPost] = useState<Post[]>([
 
             {openForm && 
 
-            // <Modal
-            // isOpen={openForm}
+            <Modal
+            isOpen={openForm}
             // onAfterOpen={closeModal}
-            // onRequestClose={closeModal}
-            // style={customStyles}
-            // contentLabel="Example Modal"
-            // >
+            onRequestClose={closeModal}
+            style={customStyles}
+            contentLabel="Example Modal"
+            >
             <ThePostForm  onSubmit={handlePostFormSubmit} onClose={closeModal}/>
-            // </Modal>
+            </Modal>
             }
 
             {post.map((post, i) => <PostInList key={i} post={post} onDelete={() => handleDeletePost(i)}/>)}
