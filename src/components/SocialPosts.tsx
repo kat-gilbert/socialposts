@@ -1,7 +1,7 @@
 import { ThePostForm } from "./ThePostForm";
 import { PostInList } from "./PostInList";
 import { Post } from "./Post";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import Modal from 'react-modal';
 import ReactDOM from 'react-dom';
 import "./SocialPosts.css" 
@@ -17,7 +17,7 @@ export const SocialPosts = () => {
         setOpenForm(false);
     }
 
-    // Modal.setAppElement('div');
+    useEffect(()=> {Modal.setAppElement('#thoughts-form-container');})
 
 const [post, setPost] = useState<Post[]>([
 
@@ -47,18 +47,16 @@ const [post, setPost] = useState<Post[]>([
       };
 
     return (
-            <div className="container">
             <div className="SocialPosts">
             <h1>My Thoughts</h1>
-            </div>
 
             <button onClick={openModal}>New Thought</button>
+            <div id="thoughts-form-container">
 
             {openForm && 
 
             <Modal
             isOpen={openForm}
-            // onAfterOpen={closeModal}
             onRequestClose={closeModal}
             style={customStyles}
             contentLabel="Example Modal"
@@ -69,6 +67,6 @@ const [post, setPost] = useState<Post[]>([
 
             {post.map((post, i) => <PostInList key={i} post={post} onDelete={() => handleDeletePost(i)}/>)}
         </div>
+        </div>
     )
-    // ReactDOM.render(<SocialPosts />, "div");
 }
